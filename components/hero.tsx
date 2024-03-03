@@ -18,11 +18,21 @@ const Hero = () => {
         <p className='hero__subtitle'>
           Streamline your car rental experience with our effortles booking process
         </p>
+        {/* add button to explore cars here */}
         <CustomButton
         title="Exlore Cars"
         containerStyles="bg-primary-blue text-white rounded-full mt-10"
         handleClick={handleScroll}
         />
+      </div>
+      {/* add hero-image section here */}
+      <div className="hero__image-container">
+        <div className="hero__image">
+          <Image src="/hero.png" alt='hero-image' className='object-contain' fill/>
+          <div className="hero__image-overlay"/>
+
+          
+        </div>
       </div>
     </div>
   )
