@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import { CustomButtonProps } from '@/types';
 
-const CustomButton = () => {
+const CustomButton = ({title,containerStyles,handleClick}: CustomButtonProps) => {
   return (
     //add a button layout with props
     <button
