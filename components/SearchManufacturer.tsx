@@ -51,13 +51,24 @@ const SearchManufacturer = ({
             <Combobox.Options>
                 {/* if the filterdMan has length zero and query is not empty then show the empty option */}
                 {filteredManufacturers.length==0 &&
-                query !== "" && (
+                query !== "" ? (
                     <Combobox.Option
                     value={query}
-                    className="Search-manufacturer__option">
+                    className="search-manufacturer__option">
 Create "{query}"
                     </Combobox.Option>
-                )}
+                ):(
+                filteredManufacturers.map((item)=>(
+                  <Combobox.Option
+                  key={item}
+                  className={({active}) => `relative search-manufacturer__option
+                ${active ? 'bg-primary-blue text-white':'text-gray-800'}`
+                }
+                value={item}>
+                    {item}
+                  </Combobox.Option>
+                )))
+                }
             </Combobox.Options>
           </Transition>
         </div>
