@@ -1,4 +1,4 @@
-import {Hero} from "@/components";
+import {Hero,SearchBar,CustomFIlter} from "@/components";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,8 +16,8 @@ export default function Home() {
         <div className="home__filters">
           <SearchBar/>
           <div className="home_filter-container">
-            <CustomFilter title="fuel"/>
-            <CustomFilter title="year"/>
+            <CustomFIlter title="fuel"/>
+            <CustomFIlter title="year"/>
           </div>
         </div>
       </div>
