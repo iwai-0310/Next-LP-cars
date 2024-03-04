@@ -13,6 +13,9 @@ const CarCard = ({ car }: CarCardProps) => {
 
 //   access the calculate Rent
 const carRent=calculateCarRent(city_mpg,year);
+
+//add state to handle modal state open or not
+const [isOpen,setIsOpen]=useState(false);
   return (
     <div className="car-card group">
       <div className="car-card__content">
@@ -74,9 +77,13 @@ const carRent=calculateCarRent(city_mpg,year);
                 title="view More"
                 containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
                 textStyles="text-whtie text-[14px] leading-[17px] font-bold"
-                rightIcon="/right-arrow.svg"/>
+                rightIcon="/right-arrow.svg"
+                handleClick={()=>setIsOpen(true)}/>
             </div>
         </div>
+
+        {/* car details comp here */}
+        
     </div>
   );
 };
