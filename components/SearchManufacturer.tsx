@@ -5,7 +5,9 @@ import { Combobox,Transition } from '@headlessui/react';
 import { SearchManufacturerProps } from '@/types'; 
 
 const SearchManufacturer = ({manufacturer,setManufacturer}:SearchManufacturerProps) => {
-  return (
+//   add state to handle query for onChange in combobox input field
+    const [query,setQuery]=useState("");
+    return (
     <div className="search-manufacture">
         {/* add combobox here */}
         <Combobox>
@@ -19,7 +21,7 @@ const SearchManufacturer = ({manufacturer,setManufacturer}:SearchManufacturerPro
             <Combobox.Input className='serach-manufacturer__input'
             placeholder='volkswagen' displayValue={(manufacture:string)=>
             manufacture}
-            onChange={}
+            onChange={(e)=>setQuery(e.target.value)}
             />
 
             </div>
