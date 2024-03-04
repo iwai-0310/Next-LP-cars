@@ -1,7 +1,7 @@
-import { Hero, SearchBar, CustomFIlter } from "@/components";
+import { Hero, SearchBar, CustomFIlter,CarCard } from "@/components";
 import Image from "next/image";
 import { fetchCars } from "@/utils";
-import CarCard from "../components/CarCard"
+
 
 export default async function Home() {
   // get all cars data from the server

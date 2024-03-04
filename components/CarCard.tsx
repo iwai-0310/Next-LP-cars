@@ -1,6 +1,10 @@
-import React from 'react'
+'use client'
+import React,{useState} from 'react';
+import Image from 'next/image';
+import { CarProps } from '@/types';
 
-const CarCard = (car:string) => {
+
+const CarCard = (car):CarProps => {
   return (
     <div>CarCard</div>
   )
