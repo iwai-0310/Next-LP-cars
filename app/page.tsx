@@ -12,6 +12,14 @@ export default function Home() {
           </h1>
           <p>Explore the cars you might like</p>
         </div>
+        {/* filters starts here */}
+        <div className="home__filters">
+          <SearchBar/>
+          <div className="home_filter-container">
+            <CustomFilter title="fuel"/>
+            <CustomFilter title="year"/>
+          </div>
+        </div>
       </div>
     </main>
   );
