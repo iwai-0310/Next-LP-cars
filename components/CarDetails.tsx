@@ -47,7 +47,13 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                     <button
                     type="button" onClick={closeModal}
                     >
-                        
+                        <Image
+                        src="/close.svg"
+                        alt="close"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                        />
                     </button>
                 </Dialog.Panel>
               </Transition.Child>
