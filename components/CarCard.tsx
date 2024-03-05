@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { CarProps } from "@/types";
 import CustomButton from "./CustomButton";
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent,generateCarImageUrl } from "@/utils";
 import { CarDetails } from ".";
 
 interface CarCardProps {
@@ -14,6 +14,8 @@ const CarCard = ({ car }: CarCardProps) => {
 
 //   access the calculate Rent
 const carRent=calculateCarRent(city_mpg,year);
+
+
 
 //add state to handle modal state open or not
 const [isOpen,setIsOpen]=useState(false);
@@ -37,7 +39,7 @@ const [isOpen,setIsOpen]=useState(false);
         </p>
         {/* add the image element here */}
         <div className="relative w-full h-40 my-3 object-contain">
-            <Image src="/hero.png"  alt="car-image"
+            <Image src={generateCarImageUrl(car)}  alt="car-image"
             fill priority
             className="object-contain"/>
         </div>
