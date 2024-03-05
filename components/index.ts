@@ -5,8 +5,9 @@ import Footer from './Footer'
 import SearchBar from './SearchBar';
 import CustomFIlter from './CustomFIlter';
 import SearchManufacturer from './SearchManufacturer';
-import CarCard from './CarCard'
+import CarCard from './CarCard';
+import CarDetails from './CarDetails';
 export{
     Hero,CustomButton,Navbar,Footer,SearchBar,CustomFIlter
-    ,SearchManufacturer,CarCard
+    ,SearchManufacturer,CarCard,CarDetails
 }
