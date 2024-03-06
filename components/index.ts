@@ -8,7 +8,7 @@ import SearchManufacturer from './SearchManufacturer';
 import CarCard from './CarCard';
 import CarDetails from './CarDetails';
 import ShowMore from './ShowMore';
-import Hero from './Hero';
+
 export{
     CustomButton,Navbar,Footer,SearchBar,CustomFIlter
-    ,SearchManufacturer,CarCard,CarDetails,ShowMore,Hero}
+    ,SearchManufacturer,CarCard,CarDetails,ShowMore}

@@ -1,6 +1,7 @@
-import { Hero,SearchBar, CustomFIlter,CarCard,ShowMore } from "@/components";
+import { SearchBar, CustomFIlter,CarCard,ShowMore } from "@/components";
 import { fetchCars } from "@/utils";
 import { fuels, yearsOfProduction } from "@/constants";
+import Hero from "@/components/Hero";
 
 
 export default async function Home({searchParams}) {
