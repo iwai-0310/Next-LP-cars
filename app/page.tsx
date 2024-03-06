@@ -4,7 +4,7 @@ import { fuels, yearsOfProduction } from "@/constants";
 import Hero from "@/components/Hero";
 
 
-export default async function Home({searchParams}) {
+export default async function Home({searchParams}:any) {
   // get all cars data from the server
   const allCars = await fetchCars({
     manufacturer: searchParams.manufacturer || "",
