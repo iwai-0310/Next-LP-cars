@@ -3,12 +3,20 @@ import Image from "next/image";
 import { fetchCars } from "@/utils";
 
 
-export default async function Home() {
+export default async function Home({searchParams}) {
   // get all cars data from the server
-  const allCars = await fetchCars();
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || "",
+    limit: searchParams.limit || 10,
+    model: searchParams.model || "",
+  });
   // console.log(allCars);
   // check if the data is empty
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+
+
   return (
     <main className="overflow-hidden">
       <Hero />

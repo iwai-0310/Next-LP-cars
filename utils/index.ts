@@ -1,14 +1,15 @@
-import { CarProps } from "@/types";
+import { CarProps, FilterProps } from "@/types";
 import {createClient} from 'pexels';
 
 
-export async function fetchCars() {
+export async function fetchCars(filters: FilterProps) {
   const headers = {
     "X-RapidAPI-Key": "02d88feb0amshda279a27b4d160ap15905ejsn4d80de94d00f",
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
+  const {manufacturer,model}=filters;
   const response = await fetch(
-    "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q3",
+    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&model=${model}`,
     {
       headers: headers,
     }

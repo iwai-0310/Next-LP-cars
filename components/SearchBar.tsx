@@ -1,5 +1,6 @@
 'use client'
 import React,{useState} from 'react'
+import {useRouter} from 'next/navigation';
 import { SearchManufacturer } from './';
 import Image from 'next/image';
 
@@ -18,9 +19,36 @@ const SearchBar = () => {
     const [manufacturer,setManufacturer] =useState('');
     //add state to handle model
     const [model,setModel]=useState("");
-    // create function -handleSearch
-    const handleSearch=()=>{
 
+    const router=useRouter();
+    // create function -handleSearch
+    const handleSearch=(e: React.FormEvent<HTMLFormElement>)=>{
+      e.preventDefault();
+
+      if(manufacturer=== '' && model === ''){
+        return alert ('please fill the search bar');
+      }
+      //call update search params here
+      updateSearchParams(model.toLowerCase(),manufacturer.toLowerCase());
+
+    }
+    //function that updates the searched query
+    const updateSearchParams=(model:string, manufacturer:string)=>{
+      const searchParams=new URLSearchParams(window.location.search);
+      if(model){
+        searchParams.set('model',model);
+      }else{
+        searchParams.delete('model');
+      }
+      if(manufacturer){
+      searchParams.set('manufacturer',manufacturer);
+      }else{
+        searchParams.delete('manufacturer');
+      }
+
+      const newPathname=`${window.location.pathname}?${
+        searchParams.toString()}`
+        router.push(newPathname);
     }
 
   return (
@@ -46,7 +74,9 @@ const SearchBar = () => {
               placeholder="Tiguan"
               className='searchbar__input'
               />
+              <SearchButton otherClasses='sm:hidden'/>
             </div>
+            <SearchButton otherClasses='max-xm:hidden'/>
     </form>
   )
 }
