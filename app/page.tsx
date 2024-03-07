@@ -1,7 +1,8 @@
-import { SearchBar, CustomFIlter,CarCard,ShowMore } from "@/components";
+import { NewHero,SearchBar, CustomFIlter,CarCard,ShowMore } from "@/components";
 import { fetchCars } from "@/utils";
 import { fuels, yearsOfProduction } from "@/constants";
-import Hero from "@/components/Hero";
+//import Hero from "@/components/Hero";
+
 
 
 export default async function Home({searchParams}:any) {
@@ -20,7 +21,7 @@ export default async function Home({searchParams}:any) {
 
   return (
     <main className="overflow-hidden">
-      <Hero />
+      <NewHero />
       <div className="mt-12 padding-x padding-y max-widht" id="discover">
         <div className="home__text-container">
           <h1 className="text-4xl font-extrabold">Car Cataloge</h1>

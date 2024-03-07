@@ -1,4 +1,4 @@
-
+import NewHero from './NewHero';
 import CustomButton from './CustomButton'
 import Navbar from './Navbar'
 import Footer from './Footer'
@@ -11,4 +11,6 @@ import ShowMore from './ShowMore';
 
 export{
     CustomButton,Navbar,Footer,SearchBar,CustomFIlter
-    ,SearchManufacturer,CarCard,CarDetails,ShowMore}
+    ,SearchManufacturer,CarCard,CarDetails,ShowMore
+    ,NewHero
+}
